@@ -1,0 +1,30 @@
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        <li>
+          <a id="link-mail" href="mailto:{{ site.email}}">
+              <span class="sr-only">twitter</span>
+          </a>
+        </li>
+        {% if site.github %}
+        <li>
+            <a id="link-github" href="http://github.com/{{ site.github.username }}" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        {% endif %}
+        {% if site.facebook %}
+        <li>
+            <a id="link-facebook" href="http://facebook.com/{{ site.facebook.username }}" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        {% endif %}
+        {% if site.twitter %}
+        <li>
+            <a id="link-twitter" href="http://twitter.com/{{ site.twitter.username }}" target="_blank">
+                <span class="sr-only">twitter</span>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</div><!--#footer-->

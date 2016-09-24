@@ -1,0 +1,32 @@
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toogle Search Bar</span>
+    </button>
+    <a id="logo" href="/">
+        <span class="sr-only">Loustler</span>
+    </a>
+    <form id="search">
+        <input id="searchQueryEdit" name="q" type="search" placeholder="Search..." value="" />
+    </form>
+    <ul id="menu" class="nav">
+        <li class="{% if page.url == '/languages/' %} active {% endif %}"><a href="{{ base_path }}/languages/">Languages</a></li>
+        <li class="{% if page.url == '/dsaa/' %} active {% endif %}">
+          <a href="{{ base_path }}/dsaa/">DataStructure &amp; Algorithms</a>
+        </li>
+        <li class="{% if page.url == '/os/' %} active {% endif %}">
+          <a href="{{ base_path }}/os/">OS</a>
+        </li>
+        <li class="{% if page.url == '/db/' %} active {% endif %}">
+          <a href="{{ base_path }}/db/">DB</a>
+        </li>
+        <li class="{% if page.url == '/devops/' %} active {% endif %}">
+          <a href="{{ base_path }}/devops/">Devops</a>
+        </li>
+        <li class="{% if page.url == '/etc/' %} active {% endif %}">
+          <a href="{{ base_path }}/etc/">Etc.</a>
+        </li>
+    </ul>
+</div><!-- #header -->

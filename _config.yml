@@ -1,0 +1,50 @@
+title: loustler 블로그
+email: dev.loustler@gmail.com
+description: |
+  아직은 모르는 것이 많고 부족한 주니어 개발자
+  모르는 것이 많기에 항상 부끄럽워 학구열에 불타는 개발자
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://loustler.github.io" # the base hostname & protocol for your site
+timezone: Asia/Seoul
+
+repository: loustler/loustler.github.io
+
+permalink: /:year/:month/:day/:title/
+
+excerpt_separator: <!--more-->
+
+markdown: kramdown
+
+krandown:
+  input: GFM
+  highlighter: rouge
+
+gems:
+  - jekyll-paginate
+
+paginate: 5
+paginate_path: '/page/:num/'
+
+collections:
+  tags:
+    output: true
+    permalink: /tags/:path/
+
+defaults:
+  - scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
+
+exclude: [README.md, LICENSE.md, Gemfile, Gemfile.lock]
+
+keep_files: [assets, files]
+
+author: dev.loustler@gmail.com
+asset_url: /assets
+image: '/assets/images/default_blog_cover.jpg'
+google_analytics:
+  ua: 'UA-82439081-1'
+github:
+  username: loustler
