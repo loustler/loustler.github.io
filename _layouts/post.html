@@ -4,11 +4,11 @@ layout: default
 <div id="navbar" class="container">
     <h5><a id="link-back" href="/">Back to Posts</a></h5>
 </div>
-
 <div id="cover" class="container"
      {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
     <div>
         <h1>{{ page.title }}</h1>
+        <h3>{{ page.date }}</h3>
         <p>
             {% for tag in page.tags %}
                 <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
