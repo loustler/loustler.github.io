@@ -31,6 +31,10 @@ kbd {
     font-weight: 300;
 }
 
+code.highlighter-rouge {
+  color: red;
+}
+
 b, strong, optgroup {
     font-weight: 400;
 }
