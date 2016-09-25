@@ -15,7 +15,7 @@ excerpt_separator: <!--more-->
 
 markdown: kramdown
 
-krandown:
+kramdown:
   input: GFM
   highlighter: rouge
 
@@ -41,7 +41,7 @@ exclude: [README.md, LICENSE.md, Gemfile, Gemfile.lock]
 
 keep_files: [assets, files]
 
-author: dev.loustler@gmail.com
+author: loustler
 asset_url: /assets
 image: '/assets/images/default_blog_cover.jpg'
 google_analytics:
