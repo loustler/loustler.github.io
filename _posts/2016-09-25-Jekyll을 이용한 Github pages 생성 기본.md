@@ -68,7 +68,7 @@ ruby를 설치한 다음엔 `gem`을 이용해 `bundler`라는 것을 설치하�
 
 {% highlight shell%}
   git init
-  git remote add your-github-clone-url
+  git remote add origin your-github-clone-url
 {% endhighlight %}
 
 [Gemfile](http://tosbourn.com/what-is-the-gemfile/)이 없을 것이다. Gemfile을 만들자
