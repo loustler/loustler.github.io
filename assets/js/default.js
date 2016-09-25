@@ -36,7 +36,7 @@
         $('#search').submit(function (e) {
             e.preventDefault();
             var q = $('#searchQueryEdit').val();
-            var url = 'http://search.daum.net/search?q=' + encodeURIComponent(q + ' site:tech.kakao.com');
+            var url = 'https://www.google.com/search?q=' + encodeURIComponent('site:loustler.io '+q);
             window.open(url, '', '_blank');
         });
 
