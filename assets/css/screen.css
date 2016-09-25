@@ -303,8 +303,8 @@ for small screen(<720px):
 }
 
 #links {
-    float: right;
-    text-align: right;
+    float: center;
+    text-align: center;
 }
 
 #footer-menu, #copyright {
