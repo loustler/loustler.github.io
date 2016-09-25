@@ -877,8 +877,8 @@ body.tag-template #navbar {
 }
 
 #post-content a {
-    text-decoration: underline;
-    text-decoration-color: #e6e6e6;
+    color: #3db39e;
+    text-decoration: none;
 }
 
 #post-content > *:first-child {
