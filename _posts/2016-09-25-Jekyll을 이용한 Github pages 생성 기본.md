@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Jekyll을 이용한 Github pages 만들기"
+title:  "Jekyll을 이용한 Github pages 만들기[기본]"
 date:   2016-09-25 13:44:30 +0900
 category: etc
 tags: [github, jekyll]
@@ -178,4 +178,4 @@ image: '' # 블로그 기본 이미지
 
 그 외는 바로바로 반영해준다.
 
-이상 `jekyll`을 통한 github pages 기본 구성하기를 마친다.
+이상 [jekyll](https://jekyllrb.com)을 통한 github pages 기본 구성하기를 마친다.
