@@ -11,7 +11,7 @@ tags: [github]
 그래서 준비했다.
 
 `username.github.io`가 아닌 자기만의 custom domain으로 구성하기!
-
+<!--more-->
 일단 필자는 국내의 DNS Provider를 사용하지 않았다
 
 필자가 추천하는 곳은 [gandi.net](https://www.gandi.net)이다.
