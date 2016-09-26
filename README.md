@@ -11,3 +11,6 @@
   1. 카테고리 폴더 생성
   2. `index.html` 생성
   3. 다른 카테고리 `index.html` 참조 (매우간단)
+
+# Local Server Start
+`bundle exec jekyll serve`
