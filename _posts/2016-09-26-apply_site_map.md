@@ -2,7 +2,7 @@
 layout: post
 title:  "구글에 검색이 잘되게 하기! sitemap"
 date:   2016-09-26 11:20:00 +0900
-category: [etc, devops]
+categories: [etc, devops]
 tags: [setting]
 ---
 
