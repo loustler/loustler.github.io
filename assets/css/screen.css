@@ -837,9 +837,11 @@ body.tag-template #navbar {
 }
 
 #post-content blockquote {
-    margin: 28px 0;
-    padding: 28px;
-    border-left: 3px solid #f3cf00;
+    padding-left: 15px;
+    color: #828282;
+    font-style: italic;
+    letter-spacing: -1px;
+    border-left: 4px solid #cfcfcf;
 }
 
 #post-content blockquote > *:first-child {
