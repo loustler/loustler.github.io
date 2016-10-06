@@ -12,7 +12,7 @@ layout: null
     {% if post.date %}
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     {% endif %}
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   {% endfor %}
@@ -23,7 +23,7 @@ layout: null
     {% if page.date %}
     <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
     {% endif %}
-    <changefreq>{{ sitemap.freq | default: 'monthly' }}</changefreq>
+    <changefreq>{{ sitemap.freq | default: 'weekly' }}</changefreq>
     <priority>{{ sitemap.priority | default: '1.0' }}</priority>
   </url>
   {% endif %}
@@ -31,7 +31,7 @@ layout: null
   {% for tag in site.tags %}
   <url>
     <loc>{{ site.url }}{{ site.baseurl }}/tags/{{ tag.name }}</loc>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   {% endfor %}
