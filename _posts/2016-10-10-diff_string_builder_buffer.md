@@ -8,7 +8,7 @@ tags : [java]
 
 `Java`에서 문자열을 표현할 때 가장 많이 사용하는 `class`는 무엇일까?
 
-단연 `String`, `StringBuilder`, `StringBuffer` 이 세개를 꼽을 수 있다.
+단연 `String`, `StringBuilder`, `StringBuffer` 이 세 개를 꼽을 수 있다.
 
 그럼 이 비슷해보이는 세 개의 `class`의 차이점은 무엇일까?
 <!--more-->
