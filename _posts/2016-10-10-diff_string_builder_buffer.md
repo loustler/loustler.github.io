@@ -101,13 +101,13 @@ public StringBuilder append(String str) {
 
 그리고 `StringBuilder`를 보면 `super.append();`가 있다.
 
-이 녀석을 추적해보면 구현한 `interface`인 `AbstractStringBuilder`에 보면
+이 녀석을 추적해보면 구현한 `interface`인 `AbstractStringBuilder`를 보면
 
 `String.getChars`를 사용하고 있고 이것을 찾아보면 `System.arrayCopy`를 통해서
 
-`String`을 카피해서 주는 걸로 보여진다.
+`String`을 카피해서 해서 주는 걸로 보인다.
 
-그리고 `String`을 `StringBuilder`가 계속 가지고 있으면서 복사본을 주는 것으로 보여진다.
+또한, `String`을 `StringBuilder`가 계속 가지고 있으면서 복사본을 주는 것으로 보여진다.
 
 `StringBuffer`도 `StringBuilder`와 똑같이 동작하며,
 
