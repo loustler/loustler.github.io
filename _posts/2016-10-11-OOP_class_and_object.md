@@ -62,7 +62,6 @@ OOP에서 `Class`와 `Object` 는 무엇일까?
    }
  }
 {% endhighlight %}
-_출처 : Effective Java 2st Edition_
 
 위의 코드가 `Class`다.
 
