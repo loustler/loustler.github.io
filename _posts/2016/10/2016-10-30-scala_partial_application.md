@@ -10,7 +10,7 @@ tags : [scala]
 부분적용(Partial Application)을 수행하는 고차함수이다.
 <!--more-->
 
-FPIS(Function Programming In Scala)를 이용해 학습하므로,
+FPIS(Functional Programming In Scala)를 이용해 학습하므로,
 
 함수형 프로그래밍의 패러다임을 배우며 스칼라를 익히고 있기 때문에
 
