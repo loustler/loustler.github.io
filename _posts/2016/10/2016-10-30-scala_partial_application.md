@@ -90,7 +90,7 @@ FPIS(Function Programming In Scala)를 이용해 학습하므로,
 
 {% highlight scala %}
 def uncurry[A, B, C](f: A => B => C): (A, B) => C =
-  (a, B) => f(a)(b)
+  (a, b) => f(a)(b)
 {% endhighlight %}
 
 `uncurry`는 인자로 함수를 리턴하는 고차원함수를 받는다.
@@ -118,7 +118,7 @@ x 값을 만족시키면 Int type의 y를 인자로 받아 x+y를 수행하는 f
 
 실행하면 `curry`의 결과와 같은 함수가 리턴되는데 이 함수에 다시 같이 받은 파라미터인 b를 넣어준다.
 
-그럼 리턴된 함수에 b읙 값이 들어가므로 결국
+그럼 리턴된 함수에 b의 값이 들어가므로 결국
 
 `x+y`가 실행되는 것과 같다.
 
