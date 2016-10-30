@@ -25,7 +25,7 @@ FPIS(Function Programming In Scala)를 이용해 학습하므로,
 
 `currying`에 대한 부분은 공부를 하다 보면 자세히 나오리라 생각한다.
 
-여기에서 **Kevin**님이 알려주신 `currying`은 다음과 같다.
+여기에서 **Kevin**님이 알려주신 `currying`의 예제는 아래 예제와 같다.
 
 {% highlight scala %}
  add :: Int -> Int -> Int
@@ -48,7 +48,7 @@ FPIS(Function Programming In Scala)를 이용해 학습하므로,
  (a) => ((b) => f(a,b))
 
  def uncurry[A, B, C](f: A => B => C): (A, B) => C =
- (a, B) => f(a)(b)
+ (a, b) => f(a)(b)
 {% endhighlight %}
 
 위의 function을 하나씩 풀어보자.
@@ -65,7 +65,7 @@ FPIS(Function Programming In Scala)를 이용해 학습하므로,
 
 그럼 원하는 결과를 내기 위해서는 리턴받은 함수에 인자를 넣어주면 된다.
 
-`(B) => f(넣은값, b)`를 수행하기 때문이다.
+`(b) => f(넣은값, b)`를 수행하기 때문이다.
 
 `curry`를 보면 다음과 같이 사용하면 된다.
 
