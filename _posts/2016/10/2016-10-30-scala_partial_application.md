@@ -3,7 +3,7 @@ layout: post
 title:  "부분 적용 작업을 수행하는 고차함수"
 date:   2016-10-30 16:50:00 +0900
 categories: [languages]
-tags : [scala]
+tags : [scala, functional programming]
 ---
 스칼라에서 공부하면서 어려웠던 부분을 풀이했다.
 
