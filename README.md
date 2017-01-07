@@ -14,3 +14,15 @@
 
 # Local Server Start
 `bundle exec jekyll serve`
+
+# Setting for local
+ see [Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
+
+ 1. `gem install bundler`(require `ruby` >= `2.1.0`)
+ 2. `bundle install`
+
+
+## Warning
+  `An error occurred while installing json ~~~` 와 같은 에러 발생시,
+  ruby 버전이 너무 높아서 그러는 것으로 보여짐.
+  ruby 버전을 낮추면 됨
