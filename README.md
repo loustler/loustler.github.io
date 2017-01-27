@@ -1,16 +1,13 @@
-# GitHub Pages
- * 기존 블로그인 [Tistory](http://loustler.tistory.com/)에서 [GitHub Pages](https://loustler.github.io)로 이전
-
-# 포스트 작성 방법
+# How to create post?
 [README](_post/README.md)
 
-# 태그 추가 방법
+# How to add new tag?
 [README](_tags/README.md)
 
-# 카테고리 추가 방법
-  1. 카테고리 폴더 생성
-  2. `index.html` 생성
-  3. 다른 카테고리 `index.html` 참조 (매우간단)
+# How to create category
+  1. Create directory for new category in root 
+  2. Create file `index.html` 
+  3. Reference at another `index.html`, because it is very simple
 
 # Local Server Start
 `bundle exec jekyll serve`
@@ -21,8 +18,17 @@
  1. `gem install bundler`(require `ruby` >= `2.1.0`)
  2. `bundle install`
 
+# Initialize 
+ 
+ 1. `\curl -sSL https://get.rvm.io | bash -s stable`
+ 2. `rvm install 2.3.3 --disable-binary` => I think 2.4.0 version is not stable, it is throw error
+ 3. [show next step](#setting-for-local)
 
 ## Warning
-  `An error occurred while installing json ~~~` 와 같은 에러 발생시,
-  ruby 버전이 너무 높아서 그러는 것으로 보여짐.
-  ruby 버전을 낮추면 됨
+if you found error like below ?
+
+ `An error occurred while installing json ~~~`
+
+Reinstall ruby like this (use rvm)
+
+`rvm reinstall [ruby version] --disable-binary`
