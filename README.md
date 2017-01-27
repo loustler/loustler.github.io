@@ -12,6 +12,8 @@
 # Local Server Start
 `bundle exec jekyll serve`
 
+Open url is `localhost:4000` or `127.0.0.1:4000`
+
 # Setting for local
  see [Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
 
