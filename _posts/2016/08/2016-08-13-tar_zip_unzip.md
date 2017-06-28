@@ -9,7 +9,9 @@ tags: [macos, linux, unix]
 tar 명령어를 통해 간단히 압축을 해제하고 압축을 할 수 있다.
 
 tar는 macOS에도 가능하다
+
 <!--more-->
+
 {% highlight shell %}
 tar cvzf [압축할 파일명] [ [압축할 파일|디렉토리 1] [압축할 파일|디렉토리 2] ..... [압축할 파일|디렉토리 N]]
 {% endhighlight %}

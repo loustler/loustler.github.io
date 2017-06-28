@@ -11,6 +11,7 @@ tags: [macos, linux, unix]
 특히, 설정파일의 특정 설정을 변경해야 할 때 여러 라인에 걸쳐져서 있는 문자를 바꾸려면
 
 그 귀찮음이 이만저만이 아니다.
+
 <!--more-->
 
 {% highlight shell %}

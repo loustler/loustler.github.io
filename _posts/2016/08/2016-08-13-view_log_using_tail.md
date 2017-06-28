@@ -11,7 +11,9 @@ tags: [linux, unix, macos]
 이를테면 서버에 요청이 왔는데 응답이 없다던가,
 
 서버를 셋팅해서 구동을 시켰는데 응답을 정상적으로 하지 않는다던가..
+
 <!--more-->
+
 하지만 log를
 {% highlight shell %}
   cat 로그파일

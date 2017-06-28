@@ -1,3 +1,5 @@
+.*
+!.gitignore
+!.gitattributes
+
 _site
-.sass-cache
-.jekyll-metadata

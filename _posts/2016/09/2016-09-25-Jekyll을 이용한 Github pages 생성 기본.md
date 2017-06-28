@@ -9,7 +9,9 @@ tags: [github, jekyll]
 기존 블로그인 [tistory](http://loustler.tistory.com)에서
 
 github에서 제공하는 pages를 이용해 blog를 옮겼다.
+
 <!--more-->
+
 기존에 사용하던 tistory도 나쁘지 않았지만,
 
 카카오 기술 블로그가 github로 옮기면서

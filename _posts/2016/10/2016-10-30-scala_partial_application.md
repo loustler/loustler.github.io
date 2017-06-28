@@ -8,6 +8,7 @@ tags : [scala, functional programming]
 스칼라에서 공부하면서 어려웠던 부분을 풀이했다.
 
 부분적용(Partial Application)을 수행하는 고차함수이다.
+
 <!--more-->
 
 FPIS(Functional Programming In Scala)를 이용해 학습하므로,

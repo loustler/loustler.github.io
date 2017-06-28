@@ -11,6 +11,7 @@ tags: [github, jekyll]
 Google Analytics(a.k.a GA)를 적용해보자.
 
 <!--more-->
+
 기존에 사용하던 티스토리는 플러그인 형식으로 지원하고 있다.
 
 그러나 `Jekyll`의 기본적인 기능만 이용하면서 사용하려면 다음과 같이 하면 된다.

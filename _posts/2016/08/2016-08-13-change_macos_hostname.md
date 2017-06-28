@@ -13,7 +13,9 @@ tags: [macos]
 .local이 붙는다던가 ...
 
 hostname을 변경하여 내가 원하는 사용자로 terminal에서 볼 수 있다.
+
 <!--more-->
+
 필자는 이런 것을 좋아하지 않기 때문에 변경하였다.
 
 {% highlight shell %}

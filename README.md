@@ -5,8 +5,8 @@
 [README](_tags/README.md)
 
 # How to create category
-  1. Create directory for new category in root 
-  2. Create file `index.html` 
+  1. Create directory for new category in root
+  2. Create file `index.html`
   3. Reference at another `index.html`, because it is very simple
 
 # Local Server Start
@@ -20,8 +20,8 @@ Open url is `localhost:4000` or `127.0.0.1:4000`
  1. `gem install bundler`(require `ruby` >= `2.1.0`)
  2. `bundle install`
 
-# Initialize 
- 
+# Initialize
+
  1. `\curl -sSL https://get.rvm.io | bash -s stable`
  2. `rvm install 2.3.3 --disable-binary` => I think 2.4.0 version is not stable, it is throw error
  3. [show next step](#setting-for-local)

@@ -11,7 +11,9 @@ macOS 계열 컴퓨터가 가지는 독특한 Key Symbolic 이 있다.
 이를테면 ⌘(command)이라든지 ⌃(control) 라든지..
 
 이것을 HTML에서는 어떻게 표현하고 있을까?
+
 <!--more-->
+
 다음과 같이 입력하면 macOS의 key symbolic key를 표현할 수 있다.
 
 ```

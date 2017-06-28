@@ -11,6 +11,7 @@ tags: [github, jekyll]
 [Tag 적용](/2016/09/25/create_github_page_use_jekyll_2/)해봤다.
 
 그럼 이제 분류를 위해 Category를 적용해보자.
+
 <!--more-->
 
 카테고리는 [Tag 적용](/2016/09/25/create_github_page_use_jekyll_2/)과

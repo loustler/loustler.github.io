@@ -13,7 +13,7 @@ tags: [nginx, setting]
 만약 ubuntu의 경우 apt-get을 통해 설치했다면
 
 {% highlight shell %}
-  vi /etc/php5/fpm/pool.d/www.conf  
+  vi /etc/php5/fpm/pool.d/www.conf
 {% endhighlight %}
 
 로 php-fpm conf 파일을 vi 로 연 뒤,

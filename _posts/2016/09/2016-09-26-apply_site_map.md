@@ -11,6 +11,7 @@ tags: [setting]
 구글에서 검색이 잘 되어야 할 것이 아닌가?
 
 `Google Search Console`에 `sitemap`을 제출하자.
+
 <!--more-->
 
 구글과 같은 검색엔진은 크롤링을 통해 웹 데이터를 수집한다.

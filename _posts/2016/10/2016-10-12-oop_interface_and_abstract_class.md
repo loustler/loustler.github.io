@@ -8,6 +8,7 @@ tags : [java, oop]
 인터페이스와 추상 클래스는 무엇이고
 
 그 차이는 무엇일까?
+
 <!--more-->
 
 인터페이스(`interface`)와 추상 클래스(`abstract class`)
