@@ -10,9 +10,9 @@
   3. Reference at another `index.html`, because it is very simple
 
 # Local Server Start
-`bundle exec jekyll serve`
+If you want to run jekyll's server, run `jekyll serve`, if not, you want just build, run `jekyll build`
 
-Open url is `localhost:4000` or `127.0.0.1:4000`
+After you run to server, open these urls of `localhost:4000` or `127.0.0.1:4000` on your browser like Chrome, Safari, Firefox and etc.
 
 # Setting for local
  see [Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
