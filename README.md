@@ -23,7 +23,7 @@ After you run to server, open these urls of `localhost:4000` or `127.0.0.1:4000`
 # Initialize
 
  1. `\curl -sSL https://get.rvm.io | bash -s stable`
- 2. `rvm install 2.4.5 --disable-binary`
+ 2. `rvm install 2.6.3 --disable-binary`
  3. [show next step](#setting-for-local)
 
 ## Warning
