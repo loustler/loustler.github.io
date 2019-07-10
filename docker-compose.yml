@@ -9,4 +9,4 @@ services:
       - type: bind
         source: ./
         target: /home/rubyuser
-    command: bash -c "bundle install && bundle exec jekyll serve"
+    command: bash -c "bundle install && bundle exec jekyll serve --host 0.0.0.0"
