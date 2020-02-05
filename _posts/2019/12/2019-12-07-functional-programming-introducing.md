@@ -28,13 +28,13 @@ tags : [scala, functional programming]
 
 이 패러다임을 지원하는 하스켈을 비롯하여 여러 언어들이 있지만 우리에게 익숙한 객체지향과 함수형 패러다임을 동시에 지원해주는 멀티패러다임 언어인 스칼라를 사용하여 개발을 하고 있다.
 
-스칼라가 함수형 패러다임을 지원해주는만큼 함수형 프로그래밍을 하기 위해 이런 함수형 패러다임의 개념들을 지원해주는 라이브러리가 있다.
+스칼라가 함수형 패러다임을 지원해주는만큼 함수형 프로그래밍을 하기 위해 이런 함수형 패러다임의 개념들을 지원해주는 라이브러리들이 있으며,
 
-대표적으로 [cats](https://github.com/typelevel/cats)와 [scalaz](https://github.com/scalaz/scalaz)가 있으며 [cats](https://typelevel.org/cats/)가 TypeLevel사가 만든 라이브러리인만큼 문서화가 더 잘되어 있다.
+대표적으로 [cats](https://github.com/typelevel/cats)와 [scalaz](https://github.com/scalaz/scalaz)가 있으며 [cats](https://typelevel.org/cats/)는 TypeLevel사가 만든 라이브러리인만큼 문서화가 더 잘되어 있다.
 
 출/퇴근 할 때 지하철에서 간간히 [scala with cats PDF](https://underscore.io/books/scala-with-cats/)를 읽곤 하는데 이 PDF를 만들어준 [underscore](https://underscore.io/)에게 감사하다
 
-이 PDF를 통해 공부한 내용 등을 내 나름대로 정리하여 앞으로 올리고자 한다.
+아무튼 이 PDF를 통해 공부한 내용 등을 내 나름대로 정리하여 앞으로 올리고자 한다.
 
 어쨌든 본론으로 돌아가서 그렇다면 함수형 프로그래밍은 우리가 흔히 하는 프로그래밍과 뭐가 다를까?
 
@@ -59,17 +59,17 @@ tags : [scala, functional programming]
   import cats.Monoid
 
   val plusInt: Monoid[Int] = new Monoid[Int] {
-    def combine(x: Int, y: Int) = x + y
+    def combine(x: Int, y: Int): Int = x + y
 
-    def empty = 0
+    def empty: Int = 0
   }
 
   plusInt.combine(1, 2) // 3
 
   val divideInt: Monoid[Int] = new Monoid[Int] {
-    def combine(x: Int, y: Int) = x / y
+    def combine(x: Int, y: Int): Int = x / y
 
-    def empty = 1
+    def empty: Int = 1
   }
 
   // java.lang.ArithmeticException: / by zero
@@ -89,24 +89,26 @@ tags : [scala, functional programming]
   import cats.effect.IO
 
   implicit val MonoidForPlusInt: Monoid[Int] = new Monoid[Int] {
-    def combine(x: Int, y: Int) = x + y
+    def combine(x: Int, y: Int): Int = x + y
 
-    def empty = 0
+    def empty: Int = 0
   }
 
-  def plus(x: Int, y: Int)(implicit M: Monoid[Int]): IO[Int] = IO.pure(x).map(M.combine(_, y))
+  def plus(x: Int, y: Int)(implicit M: Monoid[Int]): IO[Int] =
+    IO.pure(x).map(M.combine(_, y))
 
   plus(1, 2) // IO[Int]
 
   plus(1, 2).unsafeRunSync // 3
 
   implicit val MonoidForDeviceLong: Monoid[Long] = new Monoid[Long] {
-    def combine(x: Long, y: Long) = x / y
+    def combine(x: Long, y: Long): Long = x / y
 
-    def empty = 0L
+    def empty: Long = 0L
   }
 
-  def divide(x: Long, y: Long)(implicit M: Monoid[Long]): IO[Long] = IO.apply(x).map(M.combine(_, y))
+  def divide(x: Long, y: Long)(implicit M: Monoid[Long]): IO[Long] =
+    IO.apply(x).map(M.combine(_, y))
 
   divide(5, 0) // IO[Long]
 
