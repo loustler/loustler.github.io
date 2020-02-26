@@ -4,7 +4,7 @@ description: |
   아직은 모르는 것이 많고 부족한 주니어 개발자
   모르는 것이 많기에 항상 학구열에 불타는 개발자
 baseurl: "" # the subpath of your site, e.g. /blog
-url: http://loustler.io # the base hostname & protocol for your site
+url: https://loustler.io # the base hostname & protocol for your site
 timezone: Asia/Seoul
 
 repository: loustler/loustler.github.io
@@ -22,7 +22,7 @@ kramdown:
 plugins:
   - jekyll-paginate
 
-paginate: 5
+paginate: 10
 paginate_path: '/page/:num/'
 
 collections:
