@@ -3,7 +3,7 @@ layout: post
 title:  "데이터 웨어하우스(Data Warehouse)와 데이터 레이크(Data Lake)의 차이"
 date:   2020-02-26 22:52:56 +0900
 categories: [data_eng]
-tags : [data]
+tags : [data, data warehouse, data lake]
 ---
 데이터 엔지니어를 하기 위해 준비하면서 앞으로 공부한 것들을 정리하고자 한다.
 
