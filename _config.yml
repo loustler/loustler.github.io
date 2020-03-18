@@ -46,5 +46,7 @@ asset_url: /assets
 image: /assets/images/default_blog_cover.jpg
 google_analytics:
   ua: UA-82439081-2
+google_adsense:
+  ua: ca-pub-5746450339559889
 github:
   username: loustler
