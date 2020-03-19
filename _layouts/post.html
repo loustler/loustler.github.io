@@ -29,7 +29,11 @@ layout: default
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <div id="content" class="container post" role="main">
-    <div id="post-content">{{ content }}</div>
+    <div id="post-content">
+        {{ content }}
+        <hr>
+        <div>포스트에 대한 피드백이 있으시다면 <a href="mailto:{{ site.email }}">여기</a>로 메일 부탁드립니다. 읽어주셔서 감사합니다.</div>
+    </div>
 </div>
 
 <div id="post-links" class="container">
