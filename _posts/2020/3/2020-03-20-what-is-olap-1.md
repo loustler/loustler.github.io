@@ -16,13 +16,13 @@ OLAP는 서로 다른 관점으로부터 비즈니스 데이터를 추출하고 
 
 이런 분석들은 꽤 자주 데이터를 조인(join)하거나 그룹화를 하거나(group) 결합(aggreate)를 해야 한다.
 
-이런 일련의 작업들은 RDB에서 많은 리소르를 요구한다.
+그러나 이런 작업들은 RDB에서 많은 리소스를 요구한다.
 
 OLAP 데이터를 사용하게 되면 미리 계산되고(pre-calculated) 미리 결합된(pre-aggreagated) 데이터를 사용함으로써 빠른 분석을 할 수 있다.
 
-이런 OLAP를 지원하는 OLAP DB는 1개 이상의 cube로 나뉘어져 있다. 이 cube들은 리포트를 쉽게 만들고 볼 수 있도록 설계되어있다.
+이런 OLAP를 지원하는 OLAP DB는 1개 이상의 cube로 나뉘어져 있으며, 이 cube들은 리포트를 쉽게 만들고 볼 수 있도록 설계되어있다.
 
-먼저 OLAP Cube를 살펴보자.
+먼저 OLAP Cube가 뭔지 살펴보자.
 
 ![OLAP Cube from grapecity](https://gccontent.blob.core.windows.net/gccontent/blogs/legacy/c1/2014/11/OLAP_cube-300x257.png)
 
@@ -34,7 +34,7 @@ OLAP Cube는 차원(demension)들로 분리되는 계수(measure)라 불리는 �
 
 이런 OLAP Cube는 하이퍼큐브(HyperCube)라고도 한다.
 
-보통 Data operation들과 분석은 행(row)과 열(column) 형식으로 배열되는 간단한 스프레드 시트를 사용하여 실행한다.
+보통 Data operation들과 분석은 행(row)과 열(column) 형식으로 배열되는 간단한 스프레드 시트를 사용하여 실행하며,
 
 이런 스프레드 시트와 같은 것들은 행과 열로 이루어져 있어 2개의 차원(demension)으로 이루어진 데이터들이다.
 
@@ -43,7 +43,6 @@ OLAP Cube는 차원(demension)들로 분리되는 계수(measure)라 불리는 �
 그래서 사실 스프레드시트를 사용하는 건 최선의 옵션이 아니다.
 
 Cube는 다차원 데이터를 논리적이고 질서있는 방식으로 저장하고 분석할 수 있다.
-
 
 그럼 이 큐브들은 어떻게 동작할까?
 
