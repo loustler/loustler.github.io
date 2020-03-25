@@ -30,7 +30,7 @@ OLAP 데이터를 사용하게 되면 미리 계산되고(pre-calculated) 미리
 
 먼저 OLAP Cube는 데이터 구조(Data Structure)로 매우 빠른 데이터 분석을 위해 최적화된 녀석이다.
 
-OLAP Cube는 차원(demension)들로 분리되는 계수(measure)라 불리는 수차화된 사실들로 이루어져 있다.
+OLAP Cube는 차원(demension)들로 분리되는 지표(measure)라 불리는 수차화된 사실들로 이루어져 있다.
 
 이런 OLAP Cube는 하이퍼큐브(HyperCube)라고도 한다.
 
