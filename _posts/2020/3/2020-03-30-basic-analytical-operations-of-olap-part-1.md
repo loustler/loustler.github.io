@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[OLAP]OLAP의 4가지 기본적인 Operation - Part 1"
-date:   2020-03-30 22:50:30 +0900
+date:   2020-03-30 23:59:58 +0900
 categories: [data_eng]
 tags : [data]
 ---
