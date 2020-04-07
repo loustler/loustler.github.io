@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[OLAP] OLAP의 종류 - Part 1"
+title:  "[OLAP] OLAP의 종류 Part 1. 여러 OLAP의 소개"
 date:   2020-04-02 01:05:50 +0900
 categories: [data_eng]
 tags : [data]
