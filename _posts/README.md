@@ -5,7 +5,7 @@ layout: post
 title:  제목
 date:   GMT 시간
 category: 카테고리
-tags : [태그1,태그2]
+tags : [태그1, 태그2]
 ---
 ~~ 콘텐츠 ~~
 ```
