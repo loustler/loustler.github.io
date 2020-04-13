@@ -23,7 +23,7 @@ tags : [data, data warehouse, data lake]
 
 주로 아키텍처는 이렇다
 
-하단 티어 즉 최하위에 있는 부분은 *Data* 부분인 위에서 말했던 트랜잭션 시스템, RDB 등을 비롯한 데이터들이고 이것들이 ETL(Extract Transformation Load) 과정을 거쳐서 Data Warehouse에 적재가 된다
+하단 티어 즉 최하위에 있는 부분은 *Data* 부분인 위에서 말했던 트랜잭션 시스템, RDB 등을 비롯한 데이터들이고 이것들이 ETL(Extract Transform Load) 과정을 거쳐서 Data Warehouse에 적재가 된다
 
 중간 티어 *OLAP Server*는 데이터에 액세스하고 분석하는데 사용되는 분석엔진 들이다, 여기서 OLAP란 OnLine Analytical Processing을 말한다.
 
