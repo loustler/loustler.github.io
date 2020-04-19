@@ -3,7 +3,7 @@ layout: post
 title:  "[MultiThreading] 기초 1. 프로세스와 쓰레드"
 date:   2020-04-19 23:54:35 +0900
 categories: [concurrency]
-tags : [data, bigdata]
+tags : [concurrency]
 ---
 
 프로세스와 쓰레드, 그리고 Green Thread를 비롯한 여러가지에 대해서 공부하고 정리한다.
