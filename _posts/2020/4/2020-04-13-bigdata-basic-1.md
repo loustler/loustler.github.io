@@ -23,9 +23,9 @@ tags : [data, bigdata]
 1. **다양성(Variety)**
   - 데이터의 종류가 무수히 많은 것을 의미
   - 정형, 반정형, 비정형 데이터
-  - 정형(Structured): 말그대로 구조화된 데이터로 형식을 갖춘 데이터. RDB의 테이블에 저장되는 형태로 생각하면 될 듯
-  - 반정형(Semi-Structured): 정형보다 구조화가 덜 된 것으로 HTML, XML 등과 같은 것을 예로 들 수 있음
-  - 비정형(Unstructured): 이미지, 동영상, 오디오 등
+  - 정형(Structured Data): 말그대로 구조화된 데이터로 형식을 갖춘 데이터. RDB의 스키마를 생각하면 된다.
+  - 반정형(Semi-Structured Data): 정형보다 구조화가 덜 된 것으로 JSON, XML 등과 같은 것을 예로 들 수 있음. Schemaless Data라고도 함
+  - 비정형(Unstructured Data): 이미지, 동영상, 오디오 등
 
 ### 빅데이터의 4V
 1. **3V** + Value(가치)
