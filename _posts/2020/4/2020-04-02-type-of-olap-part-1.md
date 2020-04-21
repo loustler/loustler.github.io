@@ -24,6 +24,8 @@ OLAP에는 다른 것과 같이 여러 종류가 있는데 그것들이 일종�
 
 **ROLAP**는 RDB에 존재하는 데이터와 함께 동작하는데, 요소(fact)와 차원(dimension) 테이블들이 RDB에 저장된다.
 
+> Fact Table: 트랜잭션처럼 사실이 기록된 것(집계의 기반이 되는 숫자 데이터, 판매액 같은 것), Demension Table: Fact Table의 데이터에 참고되는 master data(주로 데이터를 분류하기 위한 속성값).
+
 또한 다차원 데이터 분석을 할 수 있으며 빠르게 성장하는 OLAP다.
 
 **ROLAP**의 이점은
