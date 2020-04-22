@@ -12,17 +12,17 @@ tags : [data, bigdata]
 
 <!--more-->
 
-이전에 [[BigData 기초] 1. 빅데이터의 특성과 그 기술](/data_eng/bigdata-basic-1/)에서 **3V** 중 하나를 설명할 때,
+이전에 [[BigData 기초] 1. 빅데이터의 특성과 그 기술](/data_eng/bigdata-basic-1/)에서 **3V** 중 하나인 **다양성(Variety)**을 설명할 때,
 
 **Structured Data**를 비롯해 **Semi-Structured Data**와 **Unstructured Data**에 대해서 언급했었다.
 
 또, **Semi-Structured Data**가 **Schemaless Data**라고도 불린다고도 말했었다.
 
-빅데이터의 대부분의 데이터는 이런 형식으로 이루어져 있고, 파이프라인을 구성할 때 분산 스토리지에 저장을 하게 된다.
+빅데이터의 데이터는 이런 형식으로 이루어져 있고, 파이프라인을 구성할 때 데이터를 분산 스토리지에 저장한다.
 
 이렇게 분산스토리지에 저장될 때에는, 명확한 스키마를 가지고 있지 않아 SQL을 이용하여 집계를 할 수 없다.
 
-그래서 **Structured Data**로 변환하는 것을 진행하게 된다.
+그래서 SQL을 이용하여 집계를 하기 위해 **Structured Data**로 변환하는 것을 진행하게 된다.
 
 보통 이런 **Structured Data**로 변환할 때는 **Columnar DB**를 이용하여 저장을 하게 된다. 왜냐하면 데이터 압축률을 높여 효율적으로 저장할 수 있기 때문이다.
 
@@ -55,7 +55,7 @@ MR대신 Spark를 사용할 수도 있다.
 
 **Apache Hive**를 실행시키면 Hadoop MR이 실행되는 것을 확인할 수 있다. 이는 쿼리 엔진이 쿼리를 분석하여 MR을 통하여 실행을 시키기 때문이다.
 
-현재 **Apache Hive**는 Hadoop의 MR 뿐만 아니라 **Spark**를 이용하여 쿼리를 실행시킬 수 있게 지원해준다.([Hive Jira Issue](https://issues.apache.org/jira/browse/HIVE-7292))
+현재 **Apache Hive**는 Hadoop의 MR뿐만(Hive on MR) 아니라 **Spark**를 이용하여 쿼리를 실행시킬 수 있게 지원해준다.(Hive on Spark, [Hive Jira Issue](https://issues.apache.org/jira/browse/HIVE-7292) 참고)
 
 **Apache Hive**는 배치형 쿼리 엔진으로 대량의 처리하기에 적합하다. 기존에 MR을 사용한 것을 봐도 이런 느낌이 올 것이다. 왜냐면 Hadoop의 MR은 대표적인 대용량 데이터를 위한 배치 처리 시스템이지 않은가
 
@@ -64,18 +64,18 @@ MR대신 Spark를 사용할 수도 있다.
 이 엔진은 순간 최대 속도를 높이기 위해서 현재 사용할 수 있는 리소스를 최대료 땡겨서 사용하여 빠르게 처리하는 것이 목표다. 그래서 **MPP DB**와 비교해도 나쁘지 않은 응답속도를 자랑한다.
 
 
-앞에서 **Apache Hive**를 말할 때 Spark를 지원한다고 하였다. 그 이뉴는 퍼포먼스를 올리기 위해서인데 Spark가 Hadoop MR에 비해 월등하게 속도가 빠르기 때문이다.
+앞에서 **Apache Hive**를 말할 때 Spark를 지원한다고 하였다. 그 이유는 퍼포먼스를 올리기 위해서인데, Spark가 Hadoop MR에 비해 월등하게 속도가 월등하게 빠르기 때문이다(in-memory computing).
 
-그 이유로 Hadoop이 디스크를 활용해서 IO처리가 많은 반면, Spark는 메모리에 이런 데이터들을 다 적재해서 빠르게 처리하기 때문이다.
+그 이유로 Hadoop이 디스크를 활용하기 때문에 IO처리가 많은 반면, Spark는 메모리에 이런 데이터들을 다 적재해서 빠르게 처리하기 때문이다.
 
 IO보다 메모리가 더 빠른 건 누구나 알 수 있는 사실이기 때문에 직감적으로 그 속도의 차이를 느꼈으리라 생각한다.
 
 [Spark](https://spark.apache.org/)에 접속하면 메인 페이지에 바로 보이는 것이 기존의 Hadoop MR에 비해서 100배나 빠르다고 한 것이다.
 
-Spark가 아무래도 이런 퍼포먼스에서 우수하다보니 MR을 대체하고 Spark로 넘어가는 움직임이 뚜렷하다.
+Spark가 아무래도 퍼포먼스를 비롯해 다양한 부분에서 우수하다보니 MR을 대체하고 Spark로 넘어가는 움직임이 뚜렷하다.
 
 본인이 재직했던 회사 또한 Hadoop MR을 주로 사용하다가 Spark로 넘어갔었다.
 
 이런 Spark가 주류가 됨에 따라 Spark가 꼭 Hadoop을 사용하지 않기도 한다.
 
-또, 분산스토리지로 AWS S3를 사용하거나 분산 DB인 [Apache Cassandra](https://cassandra.apache.org/)를 사용하기도 한다.
+또, 분산스토리지로 [AWS S3](https://aws.amazon.com/s3/)를 사용하거나 분산 DB인 [Apache Cassandra](https://cassandra.apache.org/)를 사용하기도 한다.
