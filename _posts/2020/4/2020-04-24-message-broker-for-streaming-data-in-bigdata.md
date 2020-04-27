@@ -68,7 +68,6 @@ Coordinator의 지시에 따라 message의 재전송 여부 등을 결정한다.
 
 그래서 만약 ack 응답이 Message Broker의 timeout보다 더 오래 걸린다면 중복된 message를 받을 수도 있다.
 
-
 ||**at most once**|**exactly once**|**at least once**|
 |정의|message의 성공/실패 여부와 상관없이 1번만 전송|message가 손실되거나 중복없이 1번만 전달|message 전달을 보장하며 중복의 가능성이 있음|
 |재전송 여부|재전송 하지 않음|**Consumer**가 받지 못했을 경우 정확히 1번 전송을 보장하기 위해 재전송|ack 응답을 받지 못하면 재전송|
