@@ -58,11 +58,11 @@ D 위에 E가 있고, 이런 E에 저장을 하면 결국 D로 저장이 되는 
 
 1. 데이터를 서버에 보냄
 1. 서버에서는 인증, 암호화, validation을 비롯한 각종 필요한 전처리를 하고 메시지 브로커(카프카)에 전송(produce)
-1. Storm(혹은 Spark stream)을 이용하여 kafka의 topic을 consume하여 필요한 스트리밍 프로세스를 처리한 뒤 NoSQL인 HBase에 저장
+1. Storm(혹은 Spark stream)을 이용하여 kafka의 topic을 consume하여 필요한 스트리밍 프로세스를 처리한 뒤 NoSQL DB인 HBase에 저장
 
 이렇게 전체 흐름을 잡을 수 있겠다.
 
-여기에서 추가적으로 Columnar DB로 변환하는 등 DW나 Data Mart를 위한 작업을 추가적으로 할 수도 있겠다.
+여기에서 추가적으로 Columnar DB로 변환하는 등 DW나 Data Mart를 위한 작업을 할 수도 있다.
 
 메시지 브로커는 보통 기본 설정이 At Least Once를 통해 메시지의 수신을 보장해준다.
 
