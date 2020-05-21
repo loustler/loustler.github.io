@@ -63,6 +63,16 @@ Data Consumer는 HBase를 이용해서 HDFS에 있는 데이터에 랜덤하게 
 |긴 시간의 배치 프로세싱을 제공해주며, 배치 프로세싱 컨셉은 없음|짧은 시간에 백만단위의 레코드로부터 각 row를 접근할 수 있음|
 |데이터에 순차 액세스만 지원|내부에서 Hash Table을 사용하며, 랜덤 액세스 지원. 빠른 조회를 위해 HDFS 파일을 인덱스|
 
+# 언제 사용? - Use Cases
+HBase는 ACID 지원하는 이상적인 플랫폼으로
+
+1. High Scale
+1. real-time application
+
+을 위해 최적의 선택이다.
+
+또, HBase는 고정된 스키마를 요구하지 않으므로 개발자가 사전정의된 모델을 따르지 않고도 새로운 데이터를 쉽게 추가할 수 있다.
+
 # 저장 원리?
 앞에서도 말했듯이 HBase는 **Columnar DB** 즉, **Column Oriented DB**이다.
 
