@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Apache HBase] HBase의 아키텍처"
-date:   2020-05-21 00:033:44 +0900
+date:   2020-05-21 23:33:44 +0900
 categories: [data_eng]
 tags : [data, bigdata, hbase]
 ---
