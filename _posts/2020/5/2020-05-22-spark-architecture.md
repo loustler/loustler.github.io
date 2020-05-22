@@ -35,7 +35,7 @@ Spark의 Architecture에 대해서 알아보자
 - **Distributed**: 클러스터의 여러 노드에 분산된 데이터
 - **DataSet**: 값과 함께 파티션된 데이터 모음
 
-또한 **RDD**는 기본적으로 lazy transformation을 따르며 본질적으로 불변이다.
+또한 **RDD**는 기본적으로 lazy transformation을 따르며 본질적으로 불변이며,
 
 **RDD**의 데이터는 키를 기준으로 chunk로 분할된다.
 
@@ -45,7 +45,7 @@ Spark의 Architecture에 대해서 알아보자
 
 이로 인해 빠르게 데이터 셋에 대한 계산을 처리할 수 있다.
 
-분사환경에서 **RDD**에 있는 각 데이터셋은 논리적 파티션으로 분할되며, 클러스터의 다른 노드에서 계산될 수도 있다.
+분환경에서 **RDD**에 있는 각 데이터셋은 논리적 파티션으로 분할되며, 클러스터의 다른 노드에서 계산될 수도 있다.
 
 이로 인해서 데이터의 변환(transformation)이나 실행(action)을 병렬적으로 실행할 수 있다.
 
@@ -62,7 +62,9 @@ Spark의 Architecture에 대해서 알아보자
 
 2가지의 방법을 할 수 있다.
 
-위에서 **Transformation**과 **Action**에 대해서 이야기 했었다.
+그리고 위에서 **Transformation**과 **Action**에 대해서 이야기 했었다.
+
+이에 대해서 잠깐 알아보자면
 
 - **Transformation**: 이미 존재하는 **RDD**에서 새로운 **RDD**를 만들어내는 연산
 - **Action**: **RDD**를 기초로 결과 값을 계산하여 그 값을 **Driver Program**에 되돌려주거나 외부 스토리지(HDFS 등)에 저장하는 연산
@@ -99,9 +101,9 @@ Spark의 Architecture에 대해서 알아보자
 **RDD**가 **Spark Context**에서 생성이 되면 언제든지 여러 노드에 거쳐 분산되고 해당 노드에서 캐싱될 수 있다.
 
 ### Worker Node
-**Worker Node**는 우리가 흔히 알고 있는 혹은 알다시피 *Slave Node*이며 *job*은 기본적으로 여러개의 *task*를 실행한다.
+**Worker Node**는 우리가 흔히 알고 있는 혹은 알다시피 *Slave Node*이며 *job*은 기본적으로 여러개의 *task*를 나눠지며 실행된다.
 
-즉 1개의 *job*이 여러개의 *task*를 만들어내는 것이다.
+즉 1개의 *job*이 여러개의 *task*로 만들어진다.
 
 이 *task*들이 **Worker Node**에 분산되어 있는 **RDD**에서 실행이 되면, 그 결과를 다시 **Spark Context**로 돌려준다.
 
