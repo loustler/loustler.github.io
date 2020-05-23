@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[OLAP]What is OLAP, OALP란?"
+title:  "[OLAP]What is OLAP, OLAP란?"
 date:   2020-03-25 22:50:30 +0900
 categories: [data_eng]
 tags : [data]
