@@ -133,7 +133,7 @@ Quasar 프로젝트가 [Kotlin](https://kotlinlang.org/)과 [Closure](https://cl
 
 즉 **Coroutine**은 concurrency(동시성)을 제공해주지만 parallelism은 아니라는 것이다.
 
-**Coroutine**의 장점으로 **Thread**에 비해 hrad-cotext에서 사용될 수 있다는 것이다.
+**Coroutine**의 장점으로 **Thread**에 비해 hard-cotext에서 사용될 수 있다는 것이다.
 
 왜냐하면 **Coroutine**간 context switching은 system call이나 blocking call이 필요하지 않기 때문이다.
 

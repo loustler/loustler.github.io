@@ -277,7 +277,7 @@ Hive 테이블이라던지, RDB, CSV, TSV 처럼 구조화가 되었거나 JSON,
 |Serialization|Java Serization 사용|Off Heap storage를 사용(InMemory)하여 binary format으로. Schema를 알고 있기 때문에 가능. Tungsten 실행 백엔드를 가지고 있어서 메모리를 명시적으로 관리하고 동적으로 bytecode를 만듬|**Encoder**가 있기 때문에 Spark 내부의 Tungsten binary format 사용|
 |GC(Garbage Collection)|각 Object의 생성과 파괴로 인한 GC의 overhead가 있음|각 *row*의 개별 Object를 구성할 때 GC 코스트 방지|Serialization때문에 GC가 OBject를 파괴할 필요가 없음. *off heap data serialization*을 사용함|
 |Efficiency / Memory use|Java와 Scala object에서 개별적으로 Serialization을 하면 효율성이 저하됨|Serialization에 `off heap memory`를 사용하면 overhead가 줄어듬.|Serializaed data에 대한 작업을 수행하고 메모리 사용성을 개선할 수 있음|
-|Lazy Evolution|기본적으로 lazy evolution. **Transformation**의 경우 이것을 실행했다는 것만 기억하고 **Action**이 **Driver Program**에 결과를 보낼 필요가 있을 때만 계산|Lazy evolution. **Action**이 나타날 때만 동작함|**RDD**나 **DataFrame**과 같음|
+|Lazy Evaluation|기본적으로 lazy Evaluation. **Transformation**의 경우 이것을 실행했다는 것만 기억하고 **Action**이 **Driver Program**에 결과를 보낼 필요가 있을 때만 계산|Lazy Evaluation. **Action**이 나타날 때만 동작함|**RDD**나 **DataFrame**과 같음|
 |Language Support|Java, Scala, Python, R|**RDD**와 같음|Scala와 Java. Spark 2.1.1 기준|
 |Schema Projection|명시적으로 사용됨. 스키마 정의가 필요함|데이터 소스로부터 스키마를 검색하고 수행함. Hive의 경우 Hive Meta store, DB의 경우 DB Engine.|Spark SQL Engine을 사용하여 자동 탐색|
 |Aggregation|느림|대규모 데이터 셋에 대한 집계 통계를 작성하기 때문에 빠르게 분석함|빠름|

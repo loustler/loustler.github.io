@@ -78,11 +78,11 @@ Storm의 핵심 추상화 중 하나로, 분산 방식으로 병렬로 처리되
 
 그래서 **Spout**는 **Stream**데이터를 처리 하기 위해서 `public void nextTuple()`이라는 중요한 메서드가 있는데 이것을 통해서 계속 **Tuple**을 받아온다.
 
-이 때 **Tuple**의 처리 여부를 확인하기 위해서 `public void ack(Object msgId)와 `public void fail(Object msgId)`가 있다.
+이 때 **Tuple**의 처리 여부를 확인하기 위해서 `public void ack(Object msgId)`와 `public void fail(Object msgId)`가 있다.
 
 만약 `fail`로 처리한다면 실패처리된 **Tuple**은 Storm의 내부 큐로 다시 넣어 재시도를 하게 된다.
 
-**Spout**이 이렇게 읽은 **Tuple**을 어디론가 흘려 보내야 되지 않겠는가? 이런 **Tuple**을 **Spout**는 **Bolt**로 보내 실질적인 스트리밍 데이터 처리를 하게 된다.
+**Spout**가 이렇게 읽은 **Tuple**을 어디론가 흘려 보내야 되지 않겠는가? 이런 **Tuple**을 **Spout**는 **Bolt**로 보내 실질적인 스트리밍 데이터 처리를 하게 된다.
 
 # Bolts
 **Bolt**는 실질적으로 스트림 데이터 **Tuple**의 처리를 담당하는 곳이다.

@@ -57,11 +57,11 @@ MR대신 Spark를 사용할 수도 있다.
 
 현재 **Apache Hive**는 Hadoop의 MR뿐만(Hive on MR) 아니라 **Spark**를 이용하여 쿼리를 실행시킬 수 있게 지원해준다.(Hive on Spark, [Hive Jira Issue](https://issues.apache.org/jira/browse/HIVE-7292) 참고)
 
-**Apache Hive**는 배치형 쿼리 엔진으로 대량의 처리하기에 적합하다. 기존에 MR을 사용한 것을 봐도 이런 느낌이 올 것이다. 왜냐면 Hadoop의 MR은 대표적인 대용량 데이터를 위한 배치 처리 시스템이지 않은가
+**Apache Hive**는 배치형 쿼리 엔진으로 대량의 데이터를 처리하기에 적합하다. 기존에 MR을 사용한 것을 봐도 이런 느낌이 올 것이다. 왜냐면 Hadoop의 MR은 대표적인 대용량 데이터를 위한 배치 처리 시스템이지 않은가
 
 이런 배치형 엔진이 있다면 다른 형태의 엔진도 있다. 대화형 쿼리 엔진으로 분류되는 [Presto](https://prestodb.io/)와 [Apache Impala](https://impala.apache.org/), Spark에 기본으로 내장되어 있는 [Spark SQL](https://spark.apache.org/sql/), [Apache Drill](https://drill.apache.org/) 등이 있다.
 
-이 엔진은 순간 최대 속도를 높이기 위해서 현재 사용할 수 있는 리소스를 최대료 땡겨서 사용하여 빠르게 처리하는 것이 목표다. 그래서 **MPP DB**와 비교해도 나쁘지 않은 응답속도를 자랑한다.
+이 엔진은 순간 최대 속도를 높이기 위해서 현재 사용할 수 있는 리소스를 최대로 땡겨서 사용하여 빠르게 처리하는 것이 목표다. 그래서 **MPP DB**와 비교해도 나쁘지 않은 응답속도를 자랑한다.
 
 
 앞에서 **Apache Hive**를 말할 때 Spark를 지원한다고 하였다. 그 이유는 퍼포먼스를 올리기 위해서인데, Spark가 Hadoop MR에 비해 월등하게 속도가 월등하게 빠르기 때문이다(in-memory computing).

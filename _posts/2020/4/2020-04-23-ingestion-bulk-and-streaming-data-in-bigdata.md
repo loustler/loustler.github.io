@@ -22,7 +22,7 @@ tags : [data, bigdata]
 
 **Apache Hadoop**는 **HDFS**외에 **HDDS**(Hadoop Distributed Data Store)을 [Ozone 프로젝트](https://hadoop.apache.org/ozone/)을 통해 지원한다.
 
-이 Ozone 프로젝트느 S3와 같은 Object Storage를 지원한다(Object Storage를 비롯한 몇 개의 Data Storage Type은 별도의 포스트로 공부한 것을 작성하겠다).
+이 Ozone 프로젝트느 S3와 같은 Object Storage를 지원한다(Object Storage를 비롯한 몇 개의 Data Storage Type은 별도의 공부를 해서 포스트로 작성하겠다).
 
 어쨌든 빅데이터에서 데이터들을 수집하여 이들을 집계 효율이 좋은 분산 스토리지를 만드는 것을 데이터 수집이라고 한다.
 
@@ -67,7 +67,7 @@ cronjob처럼 일정 간격마다 실행하여 데이터를 분산 스토리지�
 
 첫번째보다는 두번째를 주로 많이 사용할 것이다.
 
-Message Broker로 사용되는 것 중 가장 유명한 것이 [Apache Kafka](https://kafka.apache.org/)이다.
+Message Broker로 사용되는 것 중 가장 유명한 것이 [Apache Kafka](https://kafka.apache.org/)다.
 
 이런 Message Broker를 사용함으로써,
 
