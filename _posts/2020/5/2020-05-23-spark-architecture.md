@@ -23,7 +23,6 @@ Spark의 Architecture에 대해서 알아보자
 1. RDD(Resilient Distributed DataSet, 탄력적 분산 데이터셋)
 1. DAG(Directed Acyclic Graph, 방향성 비순환 그래프)
 
-
 ## RDD(Resilient Distributed DataSet)
 **RDD**는 주된 스파크 프로그래밍 추상화의 구조이며, 여러 노드에 흩어져 있으면서 병렬처리 될 수 있는 아이템들의 모음을 말한다.
 
@@ -45,7 +44,7 @@ Spark의 Architecture에 대해서 알아보자
 
 이로 인해 빠르게 데이터 셋에 대한 계산을 처리할 수 있다.
 
-분환경에서 **RDD**에 있는 각 데이터셋은 논리적 파티션으로 분할되며, 클러스터의 다른 노드에서 계산될 수도 있다.
+분산환경에서 **RDD**에 있는 각 데이터셋은 논리적 파티션으로 분할되며, 클러스터의 다른 노드에서 계산될 수도 있다.
 
 이로 인해서 데이터의 변환(transformation)이나 실행(action)을 병렬적으로 실행할 수 있다.
 
