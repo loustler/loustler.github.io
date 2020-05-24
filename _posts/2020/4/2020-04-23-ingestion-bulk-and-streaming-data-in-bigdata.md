@@ -22,7 +22,7 @@ tags : [data, bigdata]
 
 **Apache Hadoop**는 **HDFS**외에 **HDDS**(Hadoop Distributed Data Store)을 [Ozone 프로젝트](https://hadoop.apache.org/ozone/)을 통해 지원한다.
 
-이 Ozone 프로젝트느 S3와 같은 Object Storage를 지원한다(Object Storage를 비롯한 몇 개의 Data Storage Type은 별도의 공부를 해서 포스트로 작성하겠다).
+이 Ozone 프로젝트는 S3와 같은 Object Storage를 지원한다(Object Storage를 비롯한 몇 개의 Data Storage Type은 별도의 공부를 해서 포스트로 작성하겠다).
 
 어쨌든 빅데이터에서 데이터들을 수집하여 이들을 집계 효율이 좋은 분산 스토리지를 만드는 것을 데이터 수집이라고 한다.
 
