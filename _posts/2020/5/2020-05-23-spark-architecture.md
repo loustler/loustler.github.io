@@ -23,6 +23,27 @@ Spark의 Architecture에 대해서 알아보자
 1. RDD(Resilient Distributed DataSet, 탄력적 분산 데이터셋)
 1. DAG(Directed Acyclic Graph, 방향성 비순환 그래프)
 
+## Driver Process and Executor process
+먼저 Spark Application은 **Drvier Process**와 **Executor Process**로 이루어진다.
+
+### Drvier Process
+Cluster Node 에서 실행되며 `main()`을 실행한다.
+
+하는 일은
+
+1. Spark Application 정보 유지 및 관리
+1. 사용자 프로그램이나 입력에 대한 응답
+1. 전반적인 **Executor Process**의 작업과 관련된 분석, 배포 및 스케줄링
+
+위와 같이 Spark Application을 실행하는데에 있어 중요한 역할을 한다.
+
+**Driver Program** 이라고도 한다.
+
+### Executor Process
+**Driver Process**가 할당한 작업을 실행한다.
+
+그리고 이 진행상황을 **Driver Process**에 진행상태를 보고함으로써 진행상태를 알 수 있다.
+
 ## RDD(Resilient Distributed DataSet)
 **RDD**는 주된 스파크 프로그래밍 추상화의 구조이며, 여러 노드에 흩어져 있으면서 병렬처리 될 수 있는 아이템들의 모음을 말한다.
 
