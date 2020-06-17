@@ -48,6 +48,12 @@ JVM은 하나의 개념 혹은 스펙(Speicification)이다.
 
 각각에 대해서 설명을 하자면
 
+- Java Source File: 작성한 Java 코드(`.java`)
+- Java Compiler: Java Source File을 JVM이 해석할 수 있는 Java Byte Code로 변환
+- Java Byte Code: Java Compiler가 수행한 결과(`.class`)
+- Class Loader: JVM 내로 `.class` 파일들을 load해서 이렇게 loading된 Class들은 Runtime Data Area에 배치됨
+- Execution Engine: Loading된 Class의 Byte Code를 해석
+- Runtime Data Area: JVM Process가 프로그램을 실행하기 위해 OS로부터 할당받은 메모리 공간
 - Method Area: Class, Variable, Method, static variable, constant variable 등이 저장되는 영역
 - Heap Area: `new` 명령을 통해서 생성된 Instance와 object가 저장
 - Stack Area: Method 내에서 사용되는 값들이 저장되며, method가 호출될 때 **LIFO**로 하나씩 생성되고, 실행이 완료되면 **LIFO**로 하나씩 지워짐
