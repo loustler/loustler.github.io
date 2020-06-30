@@ -70,7 +70,7 @@ HDFS와 같은 분산 시스템에서 블록 추상화의 개념을 도입하면
   - 분산 시스템의 장애유형이 너무 다양해 이런 단순화가 더 중요함
   - 블록을 다루는 스토리지의 서브시스템의 경우 스토리지 관리를 단순화하기 쉽고 메타데이터에 대해 고민을 덜 한다
 
-또한 Fault Tolerance와 Availability 를 제공하는데 필요한 복제를 구현할 수 있는데 매우 적합한데,
+또한 Fault Tolerance와 Availability 를 제공하는데 필요한 복제를 구현하는데에 매우 적합한데,
 
 HDFS는 블록의 손상과 디스크 및 머신의 장애에 대처하기 위해 각 블록을 3개의 머신에 복제한다(기본값 replication: 3)
 
@@ -90,7 +90,7 @@ NameNode가 Master, DataNode가 Worker로 1개의 Master와 N개의 Worker로 �
 
 파일시스템 트리와 그 트리에 포함된 모든 파일과 디렉터리(Directory)에 대한 메타데이터(metadata)를 유지한다.
 
-이 정보는 namespace image와 eidt log라는 2종류의 파일로 로컬 디스크에 저장된다.
+이 정보는 namespace image와 edit log라는 2종류의 파일로 로컬 디스크에 저장된다.
 
 또한 파일에 속한 모든 블록이 어느 DataNode에 있는지 파악하고 있으며 이런 위치정보는 시스템이 시작할 때 모든 DataNode로부터 받아서 재구성하기 때문에 영속성을 가지지는 않는다.
 
@@ -125,3 +125,57 @@ Hadoop MR이나 Spark가 블록이 캐싱된 DataNode에서 task가 실행되도
 특히 Join을 하는 경우에 작은 lookup table을 캐싱하는 것은 좋은 활용사례
 
 Cache pool은 cache 권한이나 자원의 용도를 관리하는 관리 그룹의 역할로 cache directive를 추가하여 특정 파일을 캐시하도록 할 수 있다.
+
+## HDFS Federation
+NameNode는 위에서 말했듯이 메모리에서 모든 파일과 각 블록에 대한 참조 정보를 메모리에서 관리한다
+
+그렇기 때문에 메모리가 HDFS의 확장성에 가장 큰 걸림돌이 된다.
+
+왜냐하면 결국 HDFS를 확장한다는 것은 현재로서는 소화하기 힘들정도로 데이터가 포화상태에 이르렀다는 것이고(혹은 곧 포화상태가 되거나),
+
+HDFS를 확장하게 되면 NameNode에 더 많은 메모리가 필요하게 될 거라는 것이다.
+
+이런 NameNode 메모리 확장성 문제를 해결하기 위해서는 Hadoop 2부터 HDFS Federation을 지원해준다
+
+HDFS Federation을 활용하면 NameNode가 FileSystem의 namespace 일부를 나누어서 관리를 하는 방식으로 새로운 NameNode를 추가할 수 있게 된다.
+
+각 NameNode가 특정 directory를 관리하는 방식이라고 생각하면 되겠다.
+
+이걸 적용하게 되면 각 NameNode는 
+
+1. namespace의 metadata를 구성하는 **NameSpace Volume** 을 관리
+  - 서로 독립적
+1. namespac에 포함된 파일 전체 블록을 보관하는 **Block Pool** 을 관리
+1. 서로 통신할 필요가 없음
+1. 특정 NameNode의 장애가 전파되지 않음(다른 NameNode가 관리하는 NameSpace에세 영향을 주지 X)
+
+> Block Pool의 저장소는 분리되어 있지 않음
+
+또 모든 DataNode는 Cluster의 각 NameNode마다 등록되어 있고, 여러 Block Pool로부터 블록을 저장한다.
+
+HDSF Federation Cluster에 접근하려면 Client는 파일 경로와 NameNode를 mapping한 Client쪽 mount table을 이용함
+
+## HDFS 고가용성
+NameNode의 장애가 발생했을 때, 데이터 손실을 최소화하여 장애복구를 하기 위해서 아래와 같은 방안을 제시를 했었다.
+
+1. 데이터를 지속적으로 파일백업(NFS와 로컬)
+1. Secondary NameNode를 사용하여 checkpoint(스냅샷)를 생성하는 방식
+
+이 두 방법을 모두 사용하더라도 실상 고가용성을 100% 보장하기는 어렵다.
+
+NameNode 자체가 여전히 단일 장애포인트가 되기 때문이다(SPOF, Single Point Of Failure)
+
+NameNode에 장애가 발생하게 되면 사실상 모든 Hadoop System이 먹통이 되어버리게 된다.
+
+NameNode를 새로 실행시키면 이 문제는 해결이 되지만, 만약 규모가 큰 대형 클러스터의 경우 새로운 NameNode를 실행시키는데 어마어마한 시간이 소요된다.
+
+그 시간동안 NameNode가 동작하지 못하게 되면서 아무것도 처리할 수 없게 된다.
+
+NameNode는 다음과 같이 시작이 되는데
+
+1. namespace image를 메모리에 로드
+1. edit log 갱신
+1. 모든 DataNode로부터 Block Report를 받아서 안정상태에 안착
+
+이 과정이 끝나서 안전모드가 끝날 때 까지는 어떠한 작업도 할 수 없다.
+
