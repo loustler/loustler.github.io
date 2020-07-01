@@ -135,7 +135,7 @@ NameNode는 위에서 말했듯이 메모리에서 모든 파일과 각 블록�
 
 HDFS를 확장하게 되면 NameNode에 더 많은 메모리가 필요하게 될 거라는 것이다.
 
-이런 NameNode 메모리 확장성 문제를 해결하기 위해서는 Hadoop 2부터 HDFS Federation을 지원해준다
+이런 NameNode 메모리 확장성 문제를 해결하기 위해서 Hadoop 2부터 HDFS Federation을 지원해준다
 
 HDFS Federation을 활용하면 NameNode가 FileSystem의 namespace 일부를 나누어서 관리를 하는 방식으로 새로운 NameNode를 추가할 수 있게 된다.
 
