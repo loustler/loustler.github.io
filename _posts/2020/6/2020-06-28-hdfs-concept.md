@@ -179,3 +179,35 @@ NameNode는 다음과 같이 시작이 되는데
 
 이 과정이 끝나서 안전모드가 끝날 때 까지는 어떠한 작업도 할 수 없다.
 
+장애가 발생할 확률이 높지는 않지만 발생한다면 매우 치명적이기 때문에 이런 문제를 해결하기 위해 Hadoop 2부터 HA(High Availability)를 지원한다.
+
+HA는 NameNode를 1쌍으로 구성해서 active-standby 상태로 만든다.
+
+Active NameNode에 장애가 발생하면 standby NameNode가 역할을 이어받아서 무중단으로 클라이언트의 요청을 처리한다.
+
+이런 방식을 지원하기 위해서 HDFS가 변경이 되었는데
+
+1. NameNode는 edit log를 공유하기 위해 HA 공유 스토리지를 사용해야 함
+   - 동작
+       1. Standby NameNode가 활성화 되면 먼저 Active NameNode의 상태를 동기화하기 위해 공유된 edit log를 읽음
+       1. 이후 Active NameNode에 새로 추가되는 항목들도 읽음
+   - 이를 위한 옵션으로 2가지가 있음
+       1. QJM(Quorum Journal Manager)
+       1. NFS Filter
+1. DataNode는 Block Report를 2개의 NameNode에 보내야 함(Active Node, Standby Node)
+   - Block Mapping 정보는 Disk가 아니라 NameNode 메모리에 보관되기 때문
+1. Client는 NameNode 장애를 사용자에게 투명한 방식으로 처리할 수 있게 구성해야 함
+1. Standby NameNode는 Secondary NameNode의 역할을 포함하고 있으며, Active NameNode namespace checkpoint 작업을 주기적으로 수행
+
+### HA Shared Storage
+HA 공유 스토리지를 위한 방법으로 2가지를 위에서 언급했었다.
+
+언급했던 방법에 대해서 간략히 추가를 하자면,
+
+1. QJM(Quorum Journal Manager)
+   - HDFS 전용 구현체로 HA Edit Log 지원 목적으로 설계 됨
+   - Journal Node Group에서 동작하며 edit log는 전체 journal node에 동시에 쓰여짐
+   - Journal Node는 일반적으로 3개
+   - Zookeeper의 작동 방식과 유사
+   - HDFS 권장 옵션
+1. NFS Filter
