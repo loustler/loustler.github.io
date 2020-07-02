@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Hadoop] Hadoop FileSystem의 몇가지 FileSystem"
+title:  "[Hadoop] Hadoop FileSystem의 몇가지 구현체"
 date:   2020-07-02 22:57:14 +0900
 categories: [languages]
 tags : [bigdata, hadoop]
