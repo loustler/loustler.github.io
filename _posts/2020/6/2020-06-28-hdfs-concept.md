@@ -145,7 +145,7 @@ HDFS Federation을 활용하면 NameNode가 FileSystem의 namespace 일부를 �
 
 1. namespace의 metadata를 구성하는 **NameSpace Volume** 을 관리
   - 서로 독립적
-1. namespac에 포함된 파일 전체 블록을 보관하는 **Block Pool** 을 관리
+1. namespace에 포함된 파일 전체 블록을 보관하는 **Block Pool** 을 관리
 1. 서로 통신할 필요가 없음
 1. 특정 NameNode의 장애가 전파되지 않음(다른 NameNode가 관리하는 NameSpace에세 영향을 주지 X)
 
