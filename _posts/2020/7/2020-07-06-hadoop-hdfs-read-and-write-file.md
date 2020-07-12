@@ -52,6 +52,21 @@ Client가 NameNode가 아닌 DataNode를 통해서 요청을 처리하다보니 
    1. 세번째 DataNode는 각 패킷을 저장한다.
 1. [DFSOutputStream]()이 각 DataNode로부터 패킷이 모두 쓰여졌는지 ack 응답을 처리하기 위해 Ack Queue를 사용하여 내부 패킷들을 유지한다
 
-장애가 발생한다면 Ack Queue에 있던 모든 패킷이 다시 DAta Queue로 돌아간다.
+장애가 발생한다면 Ack Queue에 있던 모든 패킷이 다시 Data Queue로 돌아간다.
 
 장애가 발생했던 Data Node는 복구가 되면 불완전한 블록을 삭제한다.
+
+## 복제본 배치
+파일을 write 할 때 replication 설정만큼 작성한다고 했는데 이 replication이 배치되는 기준은 무엇일까?
+
+우선 Client가 Node에서 실행되지 않고 있다면 Client와 같은 Node에 있는 DataNode에 배치를 한다.
+
+만약 Client가 DataNode에서 실행되지 않는다면 랜덤하게 배치를 한다.
+
+이렇게 첫번째 replication이 배치되면, 두번째 replication은 이어서 첫번째 노드와 다른 무작위 Rack의 DataNode에 배치하고
+
+세번째 replication은 두번째 replication과 같은 Rack에 위치한 다른 DataNode에 배치한다.
+
+그 이상 replication은 random으로 배치한다.
+
+이렇게 2개의 Rack에 block을 저장함으로써 신뢰성을 확보하며, Rack은 Network Switch(Rack Switch)를 기준으로 분류한다.
