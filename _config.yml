@@ -1,8 +1,7 @@
 title: loustler 블로그
 email: dev.loustler@gmail.com
 description: |
-  아직은 모르는 것이 많고 부족한 주니어 개발자
-  모르는 것이 많기에 항상 학구열에 불타는 개발자
+  끊임없이 발전하고 싶은 아직은 부족한 개발자
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://loustler.io # the base hostname & protocol for your site
 timezone: Asia/Seoul
