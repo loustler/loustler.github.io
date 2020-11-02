@@ -5,7 +5,7 @@ date:   2020-03-04 22:30:01 +0900
 categories: [data_eng]
 tags : [data, data warehouse, data lake]
 ---
-[이전 포스트](/data_eng/diff-data_lake-data_warehouse)에서 DW와 Data Lake를 간단하게 서로 비교해보았었으니
+[이전 포스트](/data_eng/diff-data_lake-data_warehouse)에서 DW와 Data Lake를 간단하게 서로 비교해봤으니,
 
 기존의 데이터 웨어하우스(DW)에서 왜 Data Lake로 트렌드가 변하고 있는지 공부한 것을 정리하려 한다.
 
@@ -21,9 +21,12 @@ tags : [data, data warehouse, data lake]
 
 그러다보니 Data Lake라는 새로운 개념을 통해 기존의 DW + 비정형 데이터 들을 실시간으로 모으고 정제하여 통합하려는 것이다.
 
-그래서 Data Lake를 보면 빅데이터 기반이 대부분이다. 보통 Hadoop의 HDFS와 HBase 를 사용하는 것 같다.
+그래서 Data Lake를 보면 분산 시스템을 사용하므로, 보통 Hadoop의 HDFS와 AWS의 S3를 사용한다.
 
 그런데 이런 것들을 기존에 DW를 통해 잘해왔고 충분히 할 수 있을 거 같은데 굳이 Data Lake로 넘어가려는 이유가 무엇일까?
+
+1. 데이터의 다양성
+1. 다양한 시각의 분석의 어려움(DW에 저장될 때는 스키마가 정해지므로)
 
 일단 관리 리소스가 많이 들 것이며 이런 비정형 데이터를 정형 데이터로 바꾸어 스키마 형태로 저장해야되는데, 이렇게 스키마 형태로 저장이 되면 다양한 형태로 데이터를 분석하기에 더 어려움이 있을 것이다.
 
@@ -31,4 +34,6 @@ tags : [data, data warehouse, data lake]
 
 그렇다면 Data Lake에서는 이것이 쉬운가? Data Lake는 비정형 데이터, 데이터를 원본 그대로 저장함으로써 사용자로 하여금 원하는 방식으로 변경할 수 있는 ELT(Extract Load Transform)를 활용하여 원하는 대로 사용할 수 있다.
 
-원본 데이터가 그대로 있으니 사용자마다 요구사항을 일일히 반영할 필요 없이 원하는대로 만들어서 볼 수 있는 것이다. 이것이 Data Lake와 ELT를 이용하여 기존의 DW + ETL의 한계를 극복하는 것이다.
+원본 데이터가 그대로 있으니 사용자마다 요구사항을 일일히 스키마를 변경하여 반영할 필요 없이 분석할 때 원하는대로 만들어서 볼 수 있는 것이다.
+
+그래서 Data Lake와 ELT를 이용하여 기존의 DW + ETL의 한계를 극복하는 것이다.
