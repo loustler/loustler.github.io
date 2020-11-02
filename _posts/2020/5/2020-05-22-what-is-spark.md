@@ -49,7 +49,7 @@ Spark도 **Hadoop**처럼 Eco-System을 가지고 있다.
    - RDD(Resilient Distributed DataSet, 탄력적 분산 데이터셋)를 정의하는 API의 기반
 1. **Spark Streaming**
    - **Spark**에서 실시간 스트리밍 데이터 처리를 하기 위한 컴포넌트
-   - **Spark Core** 수주느이 높은 처리량과 라이브 데이터 스트림에서의 스티림 프로세싱의 장애 허용(fault-tolerant), 확장성을 지원하도록 설계됨
+   - **Spark Core** 수준의 높은 처리량과 라이브 데이터 스트림에서의 스티림 프로세싱의 장애 허용(fault-tolerant), 확장성을 지원하도록 설계됨
    - **RDD**를 확장하였음
 1. **Spark SQL**
    - 정형 데이터를 처리하기 위한 패키지
