@@ -69,7 +69,7 @@ Spark API 중에 중요하면서 유사한 RDD, DataFrame 그리고 DataSet에 �
 - 수동 파티션(Manually partitioned)
   - 정확하게 균형이 맞게 파티션을 해야 됨
   - **RDD**가 `(Key, Value)` 형태라면 `RDD.partitionBy`와 같은 메서드의 사용으로 손쉬운 파티셔닝이 가능
-  - `HasPartitionor`와 `RangePartitionor` 등 기본적으로 제공해주는 것들이 있고 커스터마이징 또한 가능
+  - `HashPartitionor`와 `RangePartitionor` 등 기본적으로 제공해주는 것들이 있고 커스터마이징 또한 가능
 
 ### RDD가 필요한 이유
 **RDD**는 **Spark**의 주된 추상화 프로그래밍 구조라고 말했었다.
