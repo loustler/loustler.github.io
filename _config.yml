@@ -36,7 +36,7 @@ defaults:
     values:
       layout: tag
 
-exclude: [README.md, LICENSE.md, Gemfile, Gemfile.lock, docker-compose.yml]
+exclude: [README.md, LICENSE.md, Gemfile, Gemfile.lock, docker-compose.yml, .github]
 
 keep_files: [assets, files]
 
