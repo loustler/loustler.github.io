@@ -9,10 +9,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 10
     reviewers:
       - "loustler"
-    target-branch: "master"
 
   - package-ecosystem: "github-actions"
     directory: "/"
