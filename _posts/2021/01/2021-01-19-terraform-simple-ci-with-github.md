@@ -86,5 +86,5 @@ jobs:
 {% endhighlight %}
 
 
-위 파일들은 [Repository](https://github.com/loustler/examples/tree/main/simple-terraform-ci-with-github-actions)에서 그 예제를 볼 수 있다.
+위 파일들은 [Repository](https://github.com/cold-hometown/skeletons/tree/main/terraform)에서 그 예제를 볼 수 있다.
 
